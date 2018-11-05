@@ -7,6 +7,7 @@ package lendle.courses.network.midterm;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.mail.Session;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,6 +40,12 @@ public class SetImagesServlet extends HttpServlet {
         設定到 session 的 1, 2, 3 attribute
         然後轉址到 index.jsp
         */
+        String image1=request.getParameter("image1");
+        String image2=request.getParameter("image2");
+        String image3=request.getParameter("image3");
+        HttpSession session=request.getSession();
+        session.setAttribute(image, image);
+        
         
     }
 

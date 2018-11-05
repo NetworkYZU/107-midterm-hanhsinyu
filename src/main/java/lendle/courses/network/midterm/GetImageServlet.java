@@ -36,7 +36,7 @@ public class GetImageServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("image/png");
-        String defaultImageString="https://upload.wikimedia.org/wikipedia/commons/9/9a/PNG_transparency_demonstration_2.png";
+        String defaultImageString = "https://upload.wikimedia.org/wikipedia/commons/9/9a/PNG_transparency_demonstration_2.png";
         /*
         從 request 抓出 parameter id
         以這個 id 從 session 裡面找出對應的 image 網址
@@ -45,8 +45,16 @@ public class GetImageServlet extends HttpServlet {
         
         你會利用到 URL 類別的建構子以及 URL 類別的 openStream 函式
         來開啟影像的 InputStream
-        */
-       
+         */
+        String id = request.getParameter("id");
+        
+
+        if (id == null) {
+            id = defaultImageString;
+        }
+
+        IOUtils.copy();
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
